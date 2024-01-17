@@ -17,14 +17,11 @@ def train(train_iter, dev_iter, model, args):
         for batch in tqdm(train_iter):
             feature, target = batch.text, batch.label
             feature = feature.permute(1, 0)
-            # print(f"feature:{feature}")
-            # print(f"feature:{feature.shape};target:{target.shape}")
             feature.data.t_(), target.data.sub_(1)
             if args.cuda:
                 feature, target = feature.cuda(), target.cuda()
             optimizer.zero_grad()
             logits = model(feature)
-            # print(f"logits:{logits.shape}")
             loss = F.cross_entropy(logits, target)
             loss.backward()
             optimizer.step()
