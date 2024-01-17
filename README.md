@@ -2,7 +2,7 @@
 在colab上使用pytorch搭建textcnn实现中文文本分类
 
 ## 使用的库
-* torchtext==0..1
+* torchtext==0.6.1
 * jieba==0.39
 
 ## 词向量
