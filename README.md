@@ -1,4 +1,4 @@
-## Textcnn 中文评价情感分类
+## Textcnn 中文车评情感分类
 在Colab上使用pytorch搭建textcnn网络实现中文评价情感分类
 
 ## 使用的库
