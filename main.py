@@ -2,7 +2,6 @@ import argparse
 import torch
 import torchtext.data as data
 from torchtext.vocab import Vectors
-
 import model
 import train
 import dataset
