@@ -1,5 +1,5 @@
 ## Textcnn 中文评价情感分类
-在colab上使用pytorch搭建textcnn网络实现中文评价情感分类
+在Colab上使用pytorch搭建textcnn网络实现中文评价情感分类
 
 ## 使用的库
 * torchtext==0.6.1
