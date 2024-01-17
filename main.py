@@ -1,7 +1,6 @@
 import argparse
 import torch
 import torchtext.data as data
-# from torchtext.legacy.data import Field
 from torchtext.vocab import Vectors
 
 import model
@@ -50,7 +49,6 @@ def load_word_vectors(model_name, model_path):
 
 
 def load_dataset(text_field, label_field, args, **kwargs):
-    # print("========== 已执行了 =========")
     train_dataset, dev_dataset = dataset.get_dataset('data', text_field, label_field)
     if args.static and args.pretrained_name and args.pretrained_path:
         vectors = load_word_vectors(args.pretrained_name, args.pretrained_path)
@@ -69,8 +67,6 @@ def load_dataset(text_field, label_field, args, **kwargs):
 print('Loading data...')
 text_field = data.Field(lower=True)
 label_field = data.Field(sequential=False)
-# text_field = Field(lower=True)
-# label_field = Field(sequential=False)
 train_iter, dev_iter = load_dataset(text_field, label_field, args, device=-1, repeat=False, shuffle=True)
 
 args.vocabulary_size = len(text_field.vocab)
